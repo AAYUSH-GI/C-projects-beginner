@@ -1,0 +1,15 @@
+name: build-and-test
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build sample project 001
+        run: |
+          cd phd-dsa-megapack-c/projects/001_wavelet_tree_rrr
+          make test
+      - name: Build sample project 002
+        run: |
+          cd phd-dsa-megapack-c/projects/002_wavelet_tree_cache_oblivious
+          make test
